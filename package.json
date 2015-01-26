@@ -1,0 +1,35 @@
+{
+  "name": "angular-tags",
+  "version": "0.0.1",
+  "description": " A transform library to generate angular directives from components like html tags",
+  "main": "./index.js",
+  "bin": {
+    "angular-tags": "./bin/cli.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/drpicox/angular-tags"
+  },
+  "keywords": [
+    "angular",
+    "tags",
+    "components"
+  ],
+  "author": "David Rodenas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/drpicox/angular-tags/issues"
+  },
+  "homepage": "https://github.com/drpicox/angular-tags",
+  "dependencies": {
+    "autoprefixer-core": "^5.0.0",
+    "cheerio": "^0.18.0",
+    "es6-promise": "^2.0.1",
+    "lodash": "^2.4.1",
+    "minimist": "^1.1.0",
+    "underscore.string": "^3.0.1"
+  }
+}
