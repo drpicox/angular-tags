@@ -21,9 +21,8 @@ Result:
 	Controller BasicAttributeController as basicAttribute
 
 */
-(function(angular) {
+;(function(angular) {
 	'use strict';
-
 	angular
 		.module('ntagExample')
 		.directive('basicAttribute', basicAttribute);

@@ -21,9 +21,8 @@ Result:
 	Controller BasicTemplateController as basicTemplate
 
 */
-(function(angular) {
+;(function(angular) {
 	'use strict';
-
 	angular
 		.module('ntagExample')
 		.directive('basicTemplate', basicTemplate);
