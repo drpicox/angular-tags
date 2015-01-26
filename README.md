@@ -36,49 +36,54 @@ This code would generate the following directive:
 
 ```javascript
 /*
-    <hello-world
-            name="=..."
-            ></hello-world>
+	<hello-world
+			data-name="=..."
+			></hello-world>
 
-    Controller HelloWorldController as helloWorld
+	Controller HelloWorldController as helloWorld
 
 */
 (function(angular) {
-    'use strict';
+	'use strict';
 
-    angular
-        .module('myApp')
-        .directive('helloWorld', helloWorld);
+	angular
+		.module('ntagExample')
+		.directive('helloWorld', helloWorld);
 
-    helloWorld.$inject = ['$document'];
-    function helloWorld  ( $document ) {
-        var directive = {
-            bindToController: true,
-            controller: HelloWorldController,
-            controllerAs: 'helloWorld',
-            restrict: 'E',
-            scope: {
-                name: '=',
-            },
-            template: '\n        <p ng-click=\"helloWorld.wave()\">Hello {{helloWorld.name}}!</p>\n    ',
-        };
+	helloWorld.$inject = ['$document'];
+	function helloWorld  ( $document ) {
+		var directive = {
+			bindToController: true,
+			controller: HelloWorldController,
+			controllerAs: 'helloWorld',
+			restrict: 'E',
+			scope: {
+				name: '=',
+			},
+			template: '\n        <p ng-click=\"helloWorld.wave()\">Hello {{helloWorld.name}}!</p>\n    ',
+		};
 
-        // register style for this component
-        $document.find('head').append('<style>\n        [hello-world] {\n            font-size: 200%;\n        }\n    </style>');
+		// register style for this component
+		$document.find('head').append('<style>\n        [hello-world] {\n            font-size: 200%;\n        }\n    </style>');
 
-        return directive;
-    }
+		return directive;
+	}
 
-    HelloWorldController.$inject = [];
-    function HelloWorldController  () {
+	HelloWorldController.$inject = [];
+	function HelloWorldController  () {
         this.wave = function() {
             console.log('wave '+this.name);
         }
-    }
+	}
 
 })(angular);
 ```
 
+
+More examples
+-------------
+
+You can find more examples here: [examples](examples/index.md).
 
 
 FAQ
@@ -101,8 +106,3 @@ be useful for many projects.
 ### Why CSS is embedded in the JS?
 
 Why not? It is the most simple solution. The compiled file is just one html file, the output file is just one another file, so there is a match one by one. But it can be customized to produce two files, one JS and other CSS. By the way, the CSS produced is autoprefixed.
-
-
-
-
-
