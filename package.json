@@ -1,17 +1,17 @@
 {
-  "name": "angular-tags",
-  "version": "0.0.2",
+  "name": "ngtags",
+  "version": "0.0.3",
   "description": " A transform library to generate angular directives from components like html tags",
   "main": "./index.js",
   "bin": {
-    "angular-tags": "./bin/cli.js"
+    "ngtagc": "./bin/ngtagc.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/drpicox/angular-tags"
+    "url": "https://github.com/drpicox/ngtags"
   },
   "keywords": [
     "angular",

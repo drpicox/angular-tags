@@ -28,7 +28,7 @@ angular directives, so all directive logic is kept toghether. Ex:
 It can be compiled with the command:
 
 ```bash
-$ angular-tags hello-world.ntag -m myApp
+$ ngtagc hello-world.ntag -m myApp
 ```
 
 
@@ -43,11 +43,11 @@ This code would generate the following directive:
 	Controller HelloWorldController as helloWorld
 
 */
-(function(angular) {
+;(function(angular) {
 	'use strict';
 
 	angular
-		.module('ntagExample')
+		.module('ntagExamples')
 		.directive('helloWorld', helloWorld);
 
 	helloWorld.$inject = ['$document'];
@@ -80,6 +80,51 @@ This code would generate the following directive:
 ```
 
 
+How to use from Node
+--------------------
+
+```bash
+$ npm --save install ngtags
+```
+
+```javascript
+var ngtags = new require('ngtags');
+
+ngtags.inputFilename = yourFilename;
+// or: ngtags.inputBody = yourTagHtml;
+ngtags.translate().then(function(ngtags) {
+    console.log(ngtags.outputBody);
+});
+```
+
+Or even more customized:
+
+```javascript
+var fs = require('fs');
+var NgTags = require('ngtags');
+
+function MyNgTags(options) {
+    NgTags.call(this, options);
+
+    this.iife = false; // remove iife expressions
+}
+MyNgTags.prototype = new NgTags();
+
+// preload default generator template file contents
+MyNgTags.prototype.generatorBody = fs.readFileSync(MyNgTags.prototype.generatorFilename);
+
+function translate(fileBody) {
+    var ngtags = new MyNgTags();
+    ngtags.inputBody = fileBody;
+    ngtags.moduleName = 'myModule';
+    ngtags.parse();
+    ngtags.generate();
+    return ngtags.outputBody;
+}
+```
+
+(see `./lib/translator.js` for all options).
+
 More examples
 -------------
 
@@ -101,6 +146,11 @@ Yes. AngularJS has many options and it makes things too complicated to beginners
 potentially creates multiple kind of solutions inside one single project. Angular-Tags
 removes large number of these options and leaves a unique uniform mechanism that should
 be useful for many projects.
+
+
+### What about scopes?
+
+This in fact is something that I should think about. All scopes variables are copied to the controller (`bindToController`), although this it seems that Angular is creating a new and isolated scope. Hidding controllers will, potentially, make more complex element interaction/implementation although everything is encapsulated in their own controller. Indeed the behaviour of `scope: true` should be the most helpful. Probably in any version in the future it will be changed and scopes will be copied _manually_ to the controller.
 
 
 ### Why CSS is embedded in the JS?

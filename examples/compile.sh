@@ -12,9 +12,15 @@ function compileMd {
 				echo "$line" >> .tmp.ntag
 				;;
 			javascript)
-				angular-tags .tmp.ntag -m "ntagExample"
-				echo "\`\`\`"
-				state="skip"
+				if [ -e .tmp.ntag ]; then
+					ngtagc .tmp.ntag -m "ntagExamples"
+					rm -f .tmp.ntag >& /dev/null
+					echo "\`\`\`"
+					state="skip"
+				else
+					echo "$line"
+					state=""
+				fi
 				;;
 			skip)
 				;;

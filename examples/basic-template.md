@@ -23,8 +23,9 @@ Result:
 */
 ;(function(angular) {
 	'use strict';
+
 	angular
-		.module('ntagExample')
+		.module('ntagExamples')
 		.directive('basicTemplate', basicTemplate);
 
 	basicTemplate.$inject = [];
