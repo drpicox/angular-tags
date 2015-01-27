@@ -1,6 +1,6 @@
 {
   "name": "ngtags",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": " A transform library to generate angular directives from components like html tags",
   "main": "./index.js",
   "bin": {
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/drpicox/ngtags"
+    "url": "https://github.com/ngtags/ngtags"
   },
   "keywords": [
     "angular",
@@ -19,11 +19,11 @@
     "components"
   ],
   "author": "David Rodenas",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/drpicox/angular-tags/issues"
+    "url": "https://github.com/ngtags/ngtags/issues"
   },
-  "homepage": "https://github.com/drpicox/angular-tags",
+  "homepage": "https://github.com/ngtags/ngtags",
   "dependencies": {
     "autoprefixer-core": "^5.0.0",
     "cheerio": "^0.18.0",

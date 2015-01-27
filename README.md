@@ -1,5 +1,5 @@
-Angular-Tags
-============
+NG-Tags
+=======
 
 Transformation utility to convert _polymer-like_ elements into 
 angular directives, so all directive logic is kept toghether. Ex:
