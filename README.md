@@ -16,7 +16,7 @@ angular directives, so all directive logic is kept toghether. Ex:
     <template>
         <p ng-click="helloWorld.wave()">Hello {{helloWorld.name}}!</p>
     </template>
-    <script inject="">
+    <script inject="" require="top">
         this.wave = function() {
             console.log('wave '+this.name);
         }
@@ -55,7 +55,8 @@ This code would generate the following directive:
 		var directive = {
 			bindToController: true,
 			controller: HelloWorldController,
-			controllerAs: 'helloWorld',
+			controllerAs: 'vm',
+			require: 'top',
 			restrict: 'E',
 			scope: {
 				name: '=',
@@ -69,8 +70,9 @@ This code would generate the following directive:
 		return directive;
 	}
 
-	HelloWorldController.$inject = [];
-	function HelloWorldController  () {
+	HelloWorldController.$inject = ['$element'];
+	function HelloWorldController  ( $element ) {
+		var top = $element.controller('top');
         this.wave = function() {
             console.log('wave '+this.name);
         }
