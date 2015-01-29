@@ -6,7 +6,7 @@ angular directives, so all directive logic is kept toghether. Ex:
 
 
 ```html
-<!-- 'hello-world.ntag' -->
+<!-- 'hello-world.ngtag' -->
 <angular-element name="hello-world" bindings="name">
     <style>
         [hello-world] {
@@ -28,7 +28,7 @@ angular directives, so all directive logic is kept toghether. Ex:
 It can be compiled with the command:
 
 ```bash
-$ ngtagc hello-world.ntag -m myApp
+$ ngtagc hello-world.ngtag -m myApp
 ```
 
 
@@ -47,7 +47,7 @@ This code would generate the following directive:
 	'use strict';
 
 	angular
-		.module('ntagExamples')
+		.module('ngtagExamples')
 		.directive('helloWorld', helloWorld);
 
 	helloWorld.$inject = ['$document'];
