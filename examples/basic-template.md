@@ -32,6 +32,7 @@ Result:
 	function basicTemplate  () {
 		var directive = {
 			restrict: 'E',
+			scope: true,
 			template: '\n        <h1>My Template</h1>\n    ',
 		};
 

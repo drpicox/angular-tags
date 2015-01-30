@@ -35,6 +35,7 @@ Result:
 			controller: BasicAttributeController,
 			controllerAs: 'basicAttribute',
 			restrict: 'A',
+			scope: true,
 		};
 
 		return directive;
@@ -47,3 +48,30 @@ Result:
 
 })(angular);
 ```
+<ANY basic-attribute></ANY>
+
+	Controller BasicAttributeController as basicAttribute
+
+*/
+;(function(angular) {
+	'use strict';
+
+	angular
+		.module('ntagExamples')
+		.directive('basicAttribute', basicAttribute);
+
+	basicAttribute.$inject = [];
+	function basicAttribute  () {
+		var directive = {
+			bindToController: true,
+			controller: BasicAttributeController,
+			controllerAs: 'basicAttribute',
+			restrict: 'A',
+			scope: true,
+		};
+
+		return directive;
+	}
+
+	BasicAttributeController.$inject = [];
+	function BasicAttributeController  () {
