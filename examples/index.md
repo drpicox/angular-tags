@@ -10,6 +10,8 @@ Example index
 - [reference-children.md](reference-children.md)
 - [reference-parents.md](reference-parents.md)
 - [script-content.md](script-content.md)
+- [style-content.md](style-content.md)
+- [tag-parameters.md](tag-parameters.md)
 - [template-attributes.md](template-attributes.md)
 - [template-classes.md](template-classes.md)
 - [template-content.md](template-content.md)
