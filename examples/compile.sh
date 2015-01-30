@@ -12,7 +12,7 @@ function compileMd {
 				echo "$line" >> .tmp.ntag
 				;;
 			javascript)
-				if [ -e .tmp.ntag ]; then
+				if [ -e .tmp.ntag ] && cat .tmp.ntag | head -1 | grep '^<angular-' >& /dev/null; then
 					ngtagc .tmp.ntag -m "ntagExamples"
 					rm -f .tmp.ntag >& /dev/null
 					echo "\`\`\`"
