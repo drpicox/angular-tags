@@ -11,7 +11,7 @@ Attributes present in the `template` are setted to the compiled element. Given t
 </div>
 ```
 
-if the `angular-element` `template` is defined as follows:
+if the ngtag `template` is defined as follows:
 
 ```html
 <angular-element name="foo">
