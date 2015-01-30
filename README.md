@@ -9,14 +9,14 @@ angular directives, so all directive logic is kept toghether. Ex:
 <!-- 'hello-world.ngtag' -->
 <angular-element name="hello-world" bindings="name">
     <style>
-        [hello-world] {
+        hello-world {
             font-size: 200%;
         }
     </style>
     <template>
         <p ng-click="helloWorld.wave()">Hello {{helloWorld.name}}!</p>
     </template>
-    <script inject="" require="top">
+    <script>
         this.wave = function() {
             console.log('wave '+this.name);
         }
@@ -61,7 +61,7 @@ This code would generate the following directive:
 			scope: {
 				name: '=',
 			},
-			template: '\n        <p ng-click=\"helloWorld.wave()\">Hello {{helloWorld.name}}!</p>\n    ',
+			template: '\n        <p ng-click="helloWorld.wave()">Hello {{helloWorld.name}}!</p>\n    ',
 		};
 
 		// register style for this component
