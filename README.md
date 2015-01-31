@@ -81,6 +81,71 @@ This code would generate the following directive:
 })(angular);
 ```
 
+Optionally you can ask do not include style injection inside the Javscript:
+
+```bash
+$ ngtagc hello-world.ngtag -m myApp --exclude-style
+```
+
+result: 
+
+```javascript
+/*
+    <hello-world
+            data-name="=..."
+            ></hello-world>
+
+    Controller HelloWorldController as helloWorld
+
+*/
+;(function(angular) {
+    'use strict';
+
+    angular
+        .module('myApp')
+        .directive('helloWorld', helloWorld);
+
+    helloWorld.$inject = [];
+    function helloWorld  () {
+        var directive = {
+            bindToController: true,
+            controller: HelloWorldController,
+            controllerAs: 'vm',
+            restrict: 'E',
+            scope: {
+                name: '=',
+            },
+            template: '\n        <p ng-click=\"helloWorld.wave()\">Hello {{helloWorld.name}}!</p>\n    ',
+        };
+
+        return directive;
+    }
+
+    HelloWorldController.$inject = [];
+    function HelloWorldController  () {
+        this.wave = function() {
+            console.log('wave '+this.name);
+        }
+    }
+
+})(angular);
+```
+
+Or generate only style:
+
+```bash
+$ ngtagc hello-world.ngtag --generate-style
+```
+
+result: 
+
+```css
+        hello-world {
+            font-size: 200%;
+        }
+```
+
+
 
 How to use from Node
 --------------------
