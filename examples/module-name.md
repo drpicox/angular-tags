@@ -22,8 +22,10 @@ Result:
 	Controller AnElementController as anElement
 
 */
+ 
 ;(function(angular) {
 	'use strict';
+
 
 	angular
 		.module('otherModule')
@@ -37,8 +39,12 @@ Result:
 			template: '\n        Inside specific module\n    ',
 		};
 
+
+
 		return directive;
 	}
 
+
+ 
 })(angular);
 ```

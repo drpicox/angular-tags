@@ -21,8 +21,10 @@ Result:
 	Controller BasicAttributeController as basicAttribute
 
 */
+ 
 ;(function(angular) {
 	'use strict';
+
 
 	angular
 		.module('ntagExamples')
@@ -38,40 +40,18 @@ Result:
 			scope: true,
 		};
 
+
+
 		return directive;
 	}
 
 	BasicAttributeController.$inject = [];
 	function BasicAttributeController  () {
+		
         console.log('basic attribute active');
+    
 	}
 
+ 
 })(angular);
 ```
-<ANY basic-attribute></ANY>
-
-	Controller BasicAttributeController as basicAttribute
-
-*/
-;(function(angular) {
-	'use strict';
-
-	angular
-		.module('ntagExamples')
-		.directive('basicAttribute', basicAttribute);
-
-	basicAttribute.$inject = [];
-	function basicAttribute  () {
-		var directive = {
-			bindToController: true,
-			controller: BasicAttributeController,
-			controllerAs: 'basicAttribute',
-			restrict: 'A',
-			scope: true,
-		};
-
-		return directive;
-	}
-
-	BasicAttributeController.$inject = [];
-	function BasicAttributeController  () {

@@ -25,8 +25,10 @@ Result:
 	Controller UserNameController as userName
 
 */
+ 
 ;(function(angular) {
 	'use strict';
+
 
 	angular
 		.module('ntagExamples')
@@ -43,13 +45,18 @@ Result:
 			template: '\n        {{this.name}}\n    ',
 		};
 
+
+
 		return directive;
 	}
 
 	UserNameController.$inject = ['userService'];
 	function UserNameController  ( userService ) {
+		
         this.name = userService.getName();
+    
 	}
 
+ 
 })(angular);
 ```

@@ -32,15 +32,15 @@ Result:
 
 ```javascript
 /*
-	<paramter-attribute
-			data-value="@..."
-			></paramter-attribute>
+	<paramter-attributedata-value="@..."></paramter-attribute>
 
 	Controller ParamterAttributeController as paramterAttribute
 
 */
+ 
 ;(function(angular) {
 	'use strict';
+
 
 	angular
 		.module('ntagExamples')
@@ -59,6 +59,8 @@ Result:
 			template: '\n        Value is: &quot;{{vm.value}}&quot;.\n    ',
 		};
 
+
+
 		return directive;
 	}
 
@@ -66,6 +68,7 @@ Result:
 	function ParamterAttributeController  () {
 	}
 
+ 
 })(angular);
 ```
 
@@ -98,15 +101,15 @@ Result:
 
 ```javascript
 /*
-	<paramter-binding
-			data-model="=..."
-			></paramter-binding>
+	<paramter-bindingdata-model="=..."></paramter-binding>
 
 	Controller ParamterBindingController as paramterBinding
 
 */
+ 
 ;(function(angular) {
 	'use strict';
+
 
 	angular
 		.module('ntagExamples')
@@ -125,6 +128,8 @@ Result:
 			template: '\n        Model value is: &quot;{{vm.value}}&quot;.<br>\n        Change it: <input type=\"number\" ng-model=\"vm.model\">\n    ',
 		};
 
+
+
 		return directive;
 	}
 
@@ -132,6 +137,7 @@ Result:
 	function ParamterBindingController  () {
 	}
 
+ 
 })(angular);
 ```
 
@@ -151,18 +157,15 @@ Result:
 
 ```javascript
 /*
-	<bindings-examples
-			data-simple="=..."
-			data-optional="=?..."
-			data-collection="=*..."
-			data-optionalCollection="=*?..."
-			></bindings-examples>
+	<bindings-examplesdata-simple="=..."data-optional="=?..."data-collection="=*..."data-optionalCollection="=*?..."></bindings-examples>
 
 	Controller BindingsExamplesController as bindingsExamples
 
 */
+ 
 ;(function(angular) {
 	'use strict';
+
 
 	angular
 		.module('ntagExamples')
@@ -183,6 +186,8 @@ Result:
 			},
 		};
 
+
+
 		return directive;
 	}
 
@@ -190,6 +195,7 @@ Result:
 	function BindingsExamplesController  () {
 	}
 
+ 
 })(angular);
 ```
 
@@ -227,15 +233,15 @@ Result:
 
 ```javascript
 /*
-	<paramter-callback
-			data-onaccumulate="&..."
-			></paramter-callback>
+	<paramter-callbackdata-onaccumulate="&..."></paramter-callback>
 
 	Controller ParamterCallbackController as paramterCallback
 
 */
+ 
 ;(function(angular) {
 	'use strict';
+
 
 	angular
 		.module('ntagExamples')
@@ -254,13 +260,18 @@ Result:
 			template: '\n    \tHow to accumulate? <input type=\"number\" ng-model=\"vm.count\"><br>\n        <button ng-click=\"vm.onaccumulate({count: vm.count})\">Accumulate!</button>\n    ',
 		};
 
+
+
 		return directive;
 	}
 
 	ParamterCallbackController.$inject = [];
 	function ParamterCallbackController  () {
+		
     	this.count = 0;
+    
 	}
 
+ 
 })(angular);
 ```

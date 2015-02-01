@@ -35,8 +35,10 @@ Result:
 	Controller ToggleController as toggle
 
 */
+ 
 ;(function(angular) {
 	'use strict';
+
 
 	angular
 		.module('ntagExamples')
@@ -52,11 +54,14 @@ Result:
 			scope: true,
 		};
 
+
+
 		return directive;
 	}
 
 	ToggleController.$inject = [];
 	function ToggleController  () {
+		
         var opened = false;
 
         this.close = function() {
@@ -72,7 +77,9 @@ Result:
             opened = !opened;
         };
 
+    
 	}
 
+ 
 })(angular);
 ```

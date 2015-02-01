@@ -34,15 +34,15 @@ Result:
 
 ```javascript
 /*
-	<slide-image
-			data-src="@..."
-			></slide-image>
+	<slide-imagedata-src="@..."></slide-image>
 
 	Controller SlideImageController as slideImage
 
 */
+ 
 ;(function(angular) {
 	'use strict';
+
 
 	angular
 		.module('ntagExamples')
@@ -65,6 +65,7 @@ Result:
 		// register style for this component
 		$document.find('head').append('<style>\n        slide-image.enter { }\n        slide-image.leave { display: none; }\n    </style>');
 
+
 		return directive;
 	}
 
@@ -72,6 +73,8 @@ Result:
 	function SlideImageController  ( $element ) {
 		var slideContainer = $element.controller('slideContainer');
 		var potato = $element.controller('potato');
+		
+    
         this.enter = function(/*direction*/) {
             $element.removeClass('leave')
             $element.addClass('enter');
@@ -82,7 +85,9 @@ Result:
         }
 
         slideContainer.addSlide(this);
+    
 	}
 
+ 
 })(angular);
 ```

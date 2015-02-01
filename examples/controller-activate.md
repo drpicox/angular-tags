@@ -32,8 +32,10 @@ Result:
 	Controller ControllerActivateElementController as controllerActivateElement
 
 */
+ 
 ;(function(angular) {
 	'use strict';
+
 
 	angular
 		.module('ntagExamples')
@@ -51,6 +53,7 @@ Result:
 			template: '\n        Result: {{vm.result}}<br>\n        <child-with-state id=\"child\"></child-with-state>\n    ',
 		};
 
+
 		function link(scope, element) {
 			if (scope.vm.activate) { scope.vm.activate(); }
 		}
@@ -61,11 +64,14 @@ Result:
 	ControllerActivateElementController.$inject = ['$scope'];
 	function ControllerActivateElementController  ( $scope ) {
 		this.$ = $scope.$ = $scope.$ || {};
+		
         this.activate = function() {
             this.result = this.$.child.getResult();
         };
+    
 	}
 
+ 
 })(angular);
 ```
 
@@ -96,8 +102,10 @@ Result:
 	Controller ControllerActivateAttributeController as controllerActivateAttribute
 
 */
+ 
 ;(function(angular) {
 	'use strict';
+
 
 	angular
 		.module('ntagExamples')
@@ -115,6 +123,7 @@ Result:
 			template: '\n        Result: {{controllerActivateAttribute.result}}<br>\n        <child-with-state id=\"child\"></child-with-state>\n    ',
 		};
 
+
 		function link(scope, element) {
 			if (scope.controllerActivateAttribute.activate) { scope.controllerActivateAttribute.activate(); }
 		}
@@ -125,10 +134,13 @@ Result:
 	ControllerActivateAttributeController.$inject = ['$scope'];
 	function ControllerActivateAttributeController  ( $scope ) {
 		this.$ = $scope.$ = $scope.$ || {};
+		
         this.activate = function() {
             this.result = this.$.child.getResult();
         };
+    
 	}
 
+ 
 })(angular);
 ```

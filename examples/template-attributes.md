@@ -52,8 +52,10 @@ Result:
 	Controller TemplateAttributesController as templateAttributes
 
 */
+ 
 ;(function(angular) {
 	'use strict';
+
 
 	angular
 		.module('ntagExamples')
@@ -68,6 +70,7 @@ Result:
 			template: '\n        <h1>My Template</h1>\n    ',
 		};
 
+
 		function link(scope, element) {
 			if (angular.isUndefined(element.attr('flex')) { element.attr('flex',''); }
 			if (angular.isUndefined(element.attr('layout')) { element.attr('layout','row'); }
@@ -76,5 +79,7 @@ Result:
 		return directive;
 	}
 
+
+ 
 })(angular);
 ```

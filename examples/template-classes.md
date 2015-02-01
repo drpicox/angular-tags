@@ -52,8 +52,10 @@ Result:
 	Controller TemplateClassesController as templateClasses
 
 */
+ 
 ;(function(angular) {
 	'use strict';
+
 
 	angular
 		.module('ntagExamples')
@@ -68,6 +70,7 @@ Result:
 			template: '\n        <h1>My Template</h1>\n    ',
 		};
 
+
 		function link(scope, element) {
 			element.addClass('md-primary md-hue-1');
 		}
@@ -75,5 +78,7 @@ Result:
 		return directive;
 	}
 
+
+ 
 })(angular);
 ```

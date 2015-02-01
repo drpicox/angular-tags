@@ -22,8 +22,10 @@ Result:
 	Controller ConsoleHelloController as consoleHello
 
 */
+ 
 ;(function(angular) {
 	'use strict';
+
 
 	angular
 		.module('ntagExamples')
@@ -39,13 +41,18 @@ Result:
 			scope: true,
 		};
 
+
+
 		return directive;
 	}
 
 	ConsoleHelloController.$inject = [];
 	function ConsoleHelloController  () {
+		
         console.log('hello world');
+    
 	}
 
+ 
 })(angular);
 ```

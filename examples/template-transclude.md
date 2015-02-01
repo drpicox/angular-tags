@@ -65,8 +65,10 @@ Result:
 	Controller GrayedBackgroundController as grayedBackground
 
 */
+ 
 ;(function(angular) {
 	'use strict';
+
 
 	angular
 		.module('ntagExamples')
@@ -82,9 +84,12 @@ Result:
 		// register style for this component
 		$document.find('head').append('<style>\n        transclude-automatic { background: gray; }\n    </style>');
 
+
 		return directive;
 	}
 
+
+ 
 })(angular);
 ```
 
@@ -167,15 +172,15 @@ Result:
 
 ```javascript
 /*
-	<panel
-			data-title="@..."
-			></panel>
+	<paneldata-title="@..."></panel>
 
 	Controller PanelController as panel
 
 */
+ 
 ;(function(angular) {
 	'use strict';
+
 
 	angular
 		.module('ntagExamples')
@@ -208,12 +213,15 @@ Result:
 
 	PanelController.$inject = ['$element','$scope'];
 	function PanelController  ( $element , $scope ) {
+		
         this.dismiss = function() {
             $scope.$destroy();
             $element.remove();
         }
+    
 	}
 
+ 
 })(angular);
 ```
 

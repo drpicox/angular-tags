@@ -26,8 +26,10 @@ Result:
 	Controller ReferenceChildrenElemsController as referenceChildrenElems
 
 */
+ 
 ;(function(angular) {
 	'use strict';
+
 
 	angular
 		.module('ntagExamples')
@@ -41,9 +43,13 @@ Result:
 			template: '\n        <toggle id=\"theToggle\"></toggle>\n        <button ng-click=\"$.theToggle.toggle()\">Toggle</button>\n        <h1 ng-show=\"$.theToggle.isOpen()\">My Content</h1>\n    ',
 		};
 
+
+
 		return directive;
 	}
 
+
+ 
 })(angular);
 ```
 
@@ -83,8 +89,10 @@ Result:
 	Controller ReferenceChildrenCtrlController as referenceChildrenCtrl
 
 */
+ 
 ;(function(angular) {
 	'use strict';
+
 
 	angular
 		.module('ntagExamples')
@@ -101,12 +109,15 @@ Result:
 			template: '\n        <toggle id=\"theToggle\"></toggle>\n        <button ng-click=\"toggleDouble()\">Click twice to Toggle</button>\n        <h1 ng-show=\"isOpen()\">My Content</h1>\n    ',
 		};
 
+
+
 		return directive;
 	}
 
 	ReferenceChildrenCtrlController.$inject = ['$scope'];
 	function ReferenceChildrenCtrlController  ( $scope ) {
 		this.$ = $scope.$ = $scope.$ || {};
+		
         var times = 0;
 
         this.toggleDouble = function() {
@@ -118,8 +129,10 @@ Result:
         this.isOpen = function() {
             return this.$.theToggle.isOpen();
         };
+    
 	}
 
+ 
 })(angular);
 ```
 

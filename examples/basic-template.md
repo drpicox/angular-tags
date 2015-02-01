@@ -21,8 +21,10 @@ Result:
 	Controller BasicTemplateController as basicTemplate
 
 */
+ 
 ;(function(angular) {
 	'use strict';
+
 
 	angular
 		.module('ntagExamples')
@@ -36,8 +38,12 @@ Result:
 			template: '\n        <h1>My Template</h1>\n    ',
 		};
 
+
+
 		return directive;
 	}
 
+
+ 
 })(angular);
 ```
