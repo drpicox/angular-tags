@@ -130,7 +130,7 @@ Requirement
 You have to include the directive `id` from `runtime` folder:
 
 ```html
-<script src="node_modules/ntags/runtime/ntags-runtime.js"></script>
+<script src="node_modules/ngtags/runtime/ngtags-runtime.js"></script>
 ```
 
 And require it in your module:
