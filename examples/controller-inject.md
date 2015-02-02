@@ -20,21 +20,19 @@ Result:
 
 ```javascript
 /*
-	<user-name></user-name>
+	<user-name
+			></user-name>
 
 	Controller UserNameController as userName
 
 */
- 
 ;(function(angular) {
 	'use strict';
-
 
 	angular
 		.module('ntagExamples')
 		.directive('userName', userName);
-
-	userName.$inject = [];
+	
 	function userName  () {
 		var directive = {
 			bindToController: true,
@@ -45,18 +43,14 @@ Result:
 			template: '\n        {{this.name}}\n    ',
 		};
 
-
-
 		return directive;
 	}
-
+	
 	UserNameController.$inject = ['userService'];
 	function UserNameController  ( userService ) {
 		
         this.name = userService.getName();
     
 	}
-
- 
 })(angular);
 ```

@@ -54,20 +54,19 @@ Result:
 
 ```javascript
 /*
-	<grayed-background></grayed-background>
+	<grayed-background
+			></grayed-background>
 
 	Controller GrayedBackgroundController as grayedBackground
 
 */
- 
 ;(function(angular) {
 	'use strict';
-
 
 	angular
 		.module('ntagExamples')
 		.directive('grayedBackground', grayedBackground);
-
+	
 	grayedBackground.$inject = ['$document'];
 	function grayedBackground  ( $document ) {
 		var directive = {
@@ -78,12 +77,8 @@ Result:
 		// register style for this component
 		$document.find('head').append('<style>\n        transclude-automatic { background: gray; }\n    </style>');
 
-
 		return directive;
 	}
-
-
- 
 })(angular);
 ```
 

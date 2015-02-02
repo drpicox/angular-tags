@@ -21,21 +21,19 @@ Result:
 
 ```javascript
 /*
-	<reference-children-elems></reference-children-elems>
+	<reference-children-elems
+			></reference-children-elems>
 
 	Controller ReferenceChildrenElemsController as referenceChildrenElems
 
 */
- 
 ;(function(angular) {
 	'use strict';
-
 
 	angular
 		.module('ntagExamples')
 		.directive('referenceChildrenElems', referenceChildrenElems);
-
-	referenceChildrenElems.$inject = [];
+	
 	function referenceChildrenElems  () {
 		var directive = {
 			restrict: 'E',
@@ -43,13 +41,8 @@ Result:
 			template: '\n        <toggle id=\"theToggle\"></toggle>\n        <button ng-click=\"$.theToggle.toggle()\">Toggle</button>\n        <h1 ng-show=\"$.theToggle.isOpen()\">My Content</h1>\n    ',
 		};
 
-
-
 		return directive;
 	}
-
-
- 
 })(angular);
 ```
 
@@ -84,21 +77,19 @@ Result:
 
 ```javascript
 /*
-	<reference-children-ctrl></reference-children-ctrl>
+	<reference-children-ctrl
+			></reference-children-ctrl>
 
 	Controller ReferenceChildrenCtrlController as referenceChildrenCtrl
 
 */
- 
 ;(function(angular) {
 	'use strict';
-
 
 	angular
 		.module('ntagExamples')
 		.directive('referenceChildrenCtrl', referenceChildrenCtrl);
-
-	referenceChildrenCtrl.$inject = [];
+	
 	function referenceChildrenCtrl  () {
 		var directive = {
 			bindToController: true,
@@ -109,11 +100,9 @@ Result:
 			template: '\n        <toggle id=\"theToggle\"></toggle>\n        <button ng-click=\"toggleDouble()\">Click twice to Toggle</button>\n        <h1 ng-show=\"isOpen()\">My Content</h1>\n    ',
 		};
 
-
-
 		return directive;
 	}
-
+	
 	ReferenceChildrenCtrlController.$inject = ['$scope'];
 	function ReferenceChildrenCtrlController  ( $scope ) {
 		this.$ = $scope.$ = $scope.$ || {};
@@ -131,8 +120,6 @@ Result:
         };
     
 	}
-
- 
 })(angular);
 ```
 

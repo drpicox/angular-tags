@@ -34,20 +34,20 @@ Result:
 
 ```javascript
 /*
-	<slide-imagedata-src="@..."></slide-image>
+	<slide-image
+			data-src="@..."
+			></slide-image>
 
 	Controller SlideImageController as slideImage
 
 */
- 
 ;(function(angular) {
 	'use strict';
-
 
 	angular
 		.module('ntagExamples')
 		.directive('slideImage', slideImage);
-
+	
 	slideImage.$inject = ['$document'];
 	function slideImage  ( $document ) {
 		var directive = {
@@ -65,10 +65,9 @@ Result:
 		// register style for this component
 		$document.find('head').append('<style>\n        slide-image.enter { }\n        slide-image.leave { display: none; }\n    </style>');
 
-
 		return directive;
 	}
-
+	
 	SlideImageController.$inject = ['$element'];
 	function SlideImageController  ( $element ) {
 		var slideContainer = $element.controller('slideContainer');
@@ -87,7 +86,5 @@ Result:
         slideContainer.addSlide(this);
     
 	}
-
- 
 })(angular);
 ```

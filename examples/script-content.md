@@ -17,21 +17,19 @@ Result:
 
 ```javascript
 /*
-	<console-hello></console-hello>
+	<console-hello
+			></console-hello>
 
 	Controller ConsoleHelloController as consoleHello
 
 */
- 
 ;(function(angular) {
 	'use strict';
-
 
 	angular
 		.module('ntagExamples')
 		.directive('consoleHello', consoleHello);
-
-	consoleHello.$inject = [];
+	
 	function consoleHello  () {
 		var directive = {
 			bindToController: true,
@@ -41,18 +39,13 @@ Result:
 			scope: true,
 		};
 
-
-
 		return directive;
 	}
-
-	ConsoleHelloController.$inject = [];
+	
 	function ConsoleHelloController  () {
 		
         console.log('hello world');
     
 	}
-
- 
 })(angular);
 ```

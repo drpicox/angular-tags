@@ -17,21 +17,19 @@ Result:
 
 ```javascript
 /*
-	<hello-world></hello-world>
+	<hello-world
+			></hello-world>
 
 	Controller HelloWorldController as helloWorld
 
 */
- 
 ;(function(angular) {
 	'use strict';
-
 
 	angular
 		.module('ntagExamples')
 		.directive('helloWorld', helloWorld);
-
-	helloWorld.$inject = [];
+	
 	function helloWorld  () {
 		var directive = {
 			restrict: 'E',
@@ -39,12 +37,7 @@ Result:
 			template: '\n        Hello World\n    ',
 		};
 
-
-
 		return directive;
 	}
-
-
- 
 })(angular);
 ```

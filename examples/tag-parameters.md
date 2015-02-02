@@ -32,21 +32,20 @@ Result:
 
 ```javascript
 /*
-	<paramter-attributedata-value="@..."></paramter-attribute>
+	<paramter-attribute
+			data-value="@..."
+			></paramter-attribute>
 
 	Controller ParamterAttributeController as paramterAttribute
 
 */
- 
 ;(function(angular) {
 	'use strict';
-
 
 	angular
 		.module('ntagExamples')
 		.directive('paramterAttribute', paramterAttribute);
-
-	paramterAttribute.$inject = [];
+	
 	function paramterAttribute  () {
 		var directive = {
 			bindToController: true,
@@ -59,16 +58,11 @@ Result:
 			template: '\n        Value is: &quot;{{vm.value}}&quot;.\n    ',
 		};
 
-
-
 		return directive;
 	}
-
-	ParamterAttributeController.$inject = [];
+	
 	function ParamterAttributeController  () {
 	}
-
- 
 })(angular);
 ```
 
@@ -101,21 +95,20 @@ Result:
 
 ```javascript
 /*
-	<paramter-bindingdata-model="=..."></paramter-binding>
+	<paramter-binding
+			data-model="=..."
+			></paramter-binding>
 
 	Controller ParamterBindingController as paramterBinding
 
 */
- 
 ;(function(angular) {
 	'use strict';
-
 
 	angular
 		.module('ntagExamples')
 		.directive('paramterBinding', paramterBinding);
-
-	paramterBinding.$inject = [];
+	
 	function paramterBinding  () {
 		var directive = {
 			bindToController: true,
@@ -128,16 +121,11 @@ Result:
 			template: '\n        Model value is: &quot;{{vm.value}}&quot;.<br>\n        Change it: <input type=\"number\" ng-model=\"vm.model\">\n    ',
 		};
 
-
-
 		return directive;
 	}
-
-	ParamterBindingController.$inject = [];
+	
 	function ParamterBindingController  () {
 	}
-
- 
 })(angular);
 ```
 
@@ -157,21 +145,23 @@ Result:
 
 ```javascript
 /*
-	<bindings-examplesdata-simple="=..."data-optional="=?..."data-collection="=*..."data-optionalCollection="=*?..."></bindings-examples>
+	<bindings-examples
+			data-simple="=..."
+			data-optional="=?..."
+			data-collection="=*..."
+			data-optionalCollection="=*?..."
+			></bindings-examples>
 
 	Controller BindingsExamplesController as bindingsExamples
 
 */
- 
 ;(function(angular) {
 	'use strict';
-
 
 	angular
 		.module('ntagExamples')
 		.directive('bindingsExamples', bindingsExamples);
-
-	bindingsExamples.$inject = [];
+	
 	function bindingsExamples  () {
 		var directive = {
 			bindToController: true,
@@ -186,16 +176,11 @@ Result:
 			},
 		};
 
-
-
 		return directive;
 	}
-
-	BindingsExamplesController.$inject = [];
+	
 	function BindingsExamplesController  () {
 	}
-
- 
 })(angular);
 ```
 
@@ -233,21 +218,20 @@ Result:
 
 ```javascript
 /*
-	<paramter-callbackdata-onaccumulate="&..."></paramter-callback>
+	<paramter-callback
+			data-onaccumulate="&..."
+			></paramter-callback>
 
 	Controller ParamterCallbackController as paramterCallback
 
 */
- 
 ;(function(angular) {
 	'use strict';
-
 
 	angular
 		.module('ntagExamples')
 		.directive('paramterCallback', paramterCallback);
-
-	paramterCallback.$inject = [];
+	
 	function paramterCallback  () {
 		var directive = {
 			bindToController: true,
@@ -260,18 +244,13 @@ Result:
 			template: '\n    \tHow to accumulate? <input type=\"number\" ng-model=\"vm.count\"><br>\n        <button ng-click=\"vm.onaccumulate({count: vm.count})\">Accumulate!</button>\n    ',
 		};
 
-
-
 		return directive;
 	}
-
-	ParamterCallbackController.$inject = [];
+	
 	function ParamterCallbackController  () {
 		
     	this.count = 0;
     
 	}
-
- 
 })(angular);
 ```

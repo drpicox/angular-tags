@@ -30,21 +30,19 @@ Result:
 
 ```javascript
 /*
-	<toggle></toggle>
+	<toggle
+			></toggle>
 
 	Controller ToggleController as toggle
 
 */
- 
 ;(function(angular) {
 	'use strict';
-
 
 	angular
 		.module('ntagExamples')
 		.directive('toggle', toggle);
-
-	toggle.$inject = [];
+	
 	function toggle  () {
 		var directive = {
 			bindToController: true,
@@ -54,12 +52,9 @@ Result:
 			scope: true,
 		};
 
-
-
 		return directive;
 	}
-
-	ToggleController.$inject = [];
+	
 	function ToggleController  () {
 		
         var opened = false;
@@ -79,7 +74,5 @@ Result:
 
     
 	}
-
- 
 })(angular);
 ```

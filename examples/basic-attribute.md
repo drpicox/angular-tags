@@ -16,21 +16,19 @@ Result:
 
 ```javascript
 /*
-	<ANY basic-attribute></ANY>
+	<ANY basic-attribute
+			></ANY>
 
 	Controller BasicAttributeController as basicAttribute
 
 */
- 
 ;(function(angular) {
 	'use strict';
-
 
 	angular
 		.module('ntagExamples')
 		.directive('basicAttribute', basicAttribute);
-
-	basicAttribute.$inject = [];
+	
 	function basicAttribute  () {
 		var directive = {
 			bindToController: true,
@@ -40,18 +38,13 @@ Result:
 			scope: true,
 		};
 
-
-
 		return directive;
 	}
-
-	BasicAttributeController.$inject = [];
+	
 	function BasicAttributeController  () {
 		
         console.log('basic attribute active');
     
 	}
-
- 
 })(angular);
 ```

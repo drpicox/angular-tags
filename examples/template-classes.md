@@ -47,21 +47,19 @@ Result:
 
 ```javascript
 /*
-	<template-classes></template-classes>
+	<template-classes
+			></template-classes>
 
 	Controller TemplateClassesController as templateClasses
 
 */
- 
 ;(function(angular) {
 	'use strict';
-
 
 	angular
 		.module('ntagExamples')
 		.directive('templateClasses', templateClasses);
-
-	templateClasses.$inject = [];
+	
 	function templateClasses  () {
 		var directive = {
 			link: link,
@@ -69,16 +67,11 @@ Result:
 			scope: true,
 			template: '\n        <h1>My Template</h1>\n    ',
 		};
-
-
 		function link(scope, element) {
 			element.addClass('md-primary md-hue-1');
 		}
 
 		return directive;
 	}
-
-
- 
 })(angular);
 ```

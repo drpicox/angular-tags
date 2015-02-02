@@ -27,21 +27,19 @@ Result:
 
 ```javascript
 /*
-	<controller-activate-element></controller-activate-element>
+	<controller-activate-element
+			></controller-activate-element>
 
 	Controller ControllerActivateElementController as controllerActivateElement
 
 */
- 
 ;(function(angular) {
 	'use strict';
-
 
 	angular
 		.module('ntagExamples')
 		.directive('controllerActivateElement', controllerActivateElement);
-
-	controllerActivateElement.$inject = [];
+	
 	function controllerActivateElement  () {
 		var directive = {
 			bindToController: true,
@@ -52,15 +50,13 @@ Result:
 			scope: true,
 			template: '\n        Result: {{vm.result}}<br>\n        <child-with-state id=\"child\"></child-with-state>\n    ',
 		};
-
-
 		function link(scope, element) {
 			if (scope.vm.activate) { scope.vm.activate(); }
 		}
 
 		return directive;
 	}
-
+	
 	ControllerActivateElementController.$inject = ['$scope'];
 	function ControllerActivateElementController  ( $scope ) {
 		this.$ = $scope.$ = $scope.$ || {};
@@ -70,8 +66,6 @@ Result:
         };
     
 	}
-
- 
 })(angular);
 ```
 
@@ -97,21 +91,19 @@ Result:
 
 ```javascript
 /*
-	<ANY controller-activate-attribute></ANY>
+	<ANY controller-activate-attribute
+			></ANY>
 
 	Controller ControllerActivateAttributeController as controllerActivateAttribute
 
 */
- 
 ;(function(angular) {
 	'use strict';
-
 
 	angular
 		.module('ntagExamples')
 		.directive('controllerActivateAttribute', controllerActivateAttribute);
-
-	controllerActivateAttribute.$inject = [];
+	
 	function controllerActivateAttribute  () {
 		var directive = {
 			bindToController: true,
@@ -122,15 +114,13 @@ Result:
 			scope: true,
 			template: '\n        Result: {{controllerActivateAttribute.result}}<br>\n        <child-with-state id=\"child\"></child-with-state>\n    ',
 		};
-
-
 		function link(scope, element) {
 			if (scope.controllerActivateAttribute.activate) { scope.controllerActivateAttribute.activate(); }
 		}
 
 		return directive;
 	}
-
+	
 	ControllerActivateAttributeController.$inject = ['$scope'];
 	function ControllerActivateAttributeController  ( $scope ) {
 		this.$ = $scope.$ = $scope.$ || {};
@@ -140,7 +130,5 @@ Result:
         };
     
 	}
-
- 
 })(angular);
 ```

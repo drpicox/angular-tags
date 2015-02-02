@@ -80,20 +80,20 @@ Result:
 
 ```javascript
 /*
-	<paneldata-title="@..."></panel>
+	<panel
+			data-title="@..."
+			></panel>
 
 	Controller PanelController as panel
 
 */
- 
 ;(function(angular) {
 	'use strict';
-
 
 	angular
 		.module('ntagExamples')
 		.directive('panel', panel);
-
+	
 	panel.$inject = ['$document'];
 	function panel  ( $document ) {
 		var directive = {
@@ -111,14 +111,13 @@ Result:
 
 		// register style for this component
 		$document.find('head').append('<style>\n        panel { border: solid black; }\n        panel .title { background: black; color: white; }\n    </style>');
-
 		function link(scope, element) {
 			if (angular.isUndefined(element.attr('layout')) { element.attr('layout','column'); }
 		}
 
 		return directive;
 	}
-
+	
 	PanelController.$inject = ['$element','$scope'];
 	function PanelController  ( $element , $scope ) {
 		
@@ -128,8 +127,5 @@ Result:
         }
     
 	}
-
- 
 })(angular);
 ```
-

@@ -16,21 +16,19 @@ Result:
 
 ```javascript
 /*
-	<basic-template></basic-template>
+	<basic-template
+			></basic-template>
 
 	Controller BasicTemplateController as basicTemplate
 
 */
- 
 ;(function(angular) {
 	'use strict';
-
 
 	angular
 		.module('ntagExamples')
 		.directive('basicTemplate', basicTemplate);
-
-	basicTemplate.$inject = [];
+	
 	function basicTemplate  () {
 		var directive = {
 			restrict: 'E',
@@ -38,12 +36,7 @@ Result:
 			template: '\n        <h1>My Template</h1>\n    ',
 		};
 
-
-
 		return directive;
 	}
-
-
- 
 })(angular);
 ```

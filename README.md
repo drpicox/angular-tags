@@ -26,21 +26,19 @@ This code would generate the following directive:
 
 ```javascript
 /*
-	<hello-world></hello-world>
+	<hello-world
+			></hello-world>
 
 	Controller HelloWorldController as helloWorld
 
 */
- 
 ;(function(angular) {
 	'use strict';
-
 
 	angular
 		.module('ntagExamples')
 		.directive('helloWorld', helloWorld);
-
-	helloWorld.$inject = [];
+	
 	function helloWorld  () {
 		var directive = {
 			restrict: 'E',
@@ -48,13 +46,8 @@ This code would generate the following directive:
 			template: '\n        Hello World!\n    ',
 		};
 
-
-
 		return directive;
 	}
-
-
- 
 })(angular);
 ```
 
@@ -93,20 +86,20 @@ This code would generate the following directive:
 
 ```javascript
 /*
-	<hello-world2data-name="=..."></hello-world2>
+	<hello-world2
+			data-name="=..."
+			></hello-world2>
 
 	Controller HelloWorld2Controller as helloWorld2
 
 */
- 
 ;(function(angular) {
 	'use strict';
-
 
 	angular
 		.module('ntagExamples')
 		.directive('helloWorld2', helloWorld2);
-
+	
 	helloWorld2.$inject = ['$document'];
 	function helloWorld2  ( $document ) {
 		var directive = {
@@ -123,11 +116,9 @@ This code would generate the following directive:
 		// register style for this component
 		$document.find('head').append('<style>\n        hello-world {\n            font-size: 200%;\n        }\n    </style>');
 
-
 		return directive;
 	}
-
-	HelloWorld2Controller.$inject = [];
+	
 	function HelloWorld2Controller  () {
 		
         this.wave = function() {
@@ -135,8 +126,6 @@ This code would generate the following directive:
         }
     
 	}
-
- 
 })(angular);
 ```
 
@@ -180,7 +169,6 @@ result:
         return directive;
     }
 
-    HelloWorldController.$inject = [];
     function HelloWorldController  () {
         this.wave = function() {
             console.log('wave '+this.name);

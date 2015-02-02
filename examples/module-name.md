@@ -17,21 +17,19 @@ Result:
 
 ```javascript
 /*
-	<an-element></an-element>
+	<an-element
+			></an-element>
 
 	Controller AnElementController as anElement
 
 */
- 
 ;(function(angular) {
 	'use strict';
-
 
 	angular
 		.module('otherModule')
 		.directive('anElement', anElement);
-
-	anElement.$inject = [];
+	
 	function anElement  () {
 		var directive = {
 			restrict: 'E',
@@ -39,12 +37,7 @@ Result:
 			template: '\n        Inside specific module\n    ',
 		};
 
-
-
 		return directive;
 	}
-
-
- 
 })(angular);
 ```

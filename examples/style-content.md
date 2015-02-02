@@ -22,20 +22,19 @@ Result:
 
 ```javascript
 /*
-	<blue-box></blue-box>
+	<blue-box
+			></blue-box>
 
 	Controller BlueBoxController as blueBox
 
 */
- 
 ;(function(angular) {
 	'use strict';
-
 
 	angular
 		.module('ntagExamples')
 		.directive('blueBox', blueBox);
-
+	
 	blueBox.$inject = ['$document'];
 	function blueBox  ( $document ) {
 		var directive = {
@@ -46,11 +45,7 @@ Result:
 		// register style for this component
 		$document.find('head').append('<style>\n        blue-box {\n            display: block;\n            color: white;\n            background: blue;\n            padding: 10px;\n        }\n    </style>');
 
-
 		return directive;
 	}
-
-
- 
 })(angular);
 ```

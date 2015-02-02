@@ -47,21 +47,19 @@ Result:
 
 ```javascript
 /*
-	<template-attributes></template-attributes>
+	<template-attributes
+			></template-attributes>
 
 	Controller TemplateAttributesController as templateAttributes
 
 */
- 
 ;(function(angular) {
 	'use strict';
-
 
 	angular
 		.module('ntagExamples')
 		.directive('templateAttributes', templateAttributes);
-
-	templateAttributes.$inject = [];
+	
 	function templateAttributes  () {
 		var directive = {
 			link: link,
@@ -69,8 +67,6 @@ Result:
 			scope: true,
 			template: '\n        <h1>My Template</h1>\n    ',
 		};
-
-
 		function link(scope, element) {
 			if (angular.isUndefined(element.attr('flex')) { element.attr('flex',''); }
 			if (angular.isUndefined(element.attr('layout')) { element.attr('layout','row'); }
@@ -78,8 +74,5 @@ Result:
 
 		return directive;
 	}
-
-
- 
 })(angular);
 ```
