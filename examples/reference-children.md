@@ -136,5 +136,5 @@ You have to include the directive `id` from `runtime` folder:
 And require it in your module:
 
 ```javscript
-angular.module('yourModule', ['ntagsRuntime']);
+angular.module('yourModule', ['ngtagsRuntime']);
 ```
