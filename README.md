@@ -2,12 +2,69 @@ NG-Tags
 =======
 
 Transformation utility to convert _polymer-like_ elements into 
-angular directives, so all directive logic is kept toghether. Ex:
+angular directives, so all directive logic is kept toghether. 
+
+### Example 1
+
+```html
+<angular-element name="hello-world">
+    <template>
+        Hello World!
+    </template>
+</angular-element>
+```
+
+
+It can be compiled with the command:
+
+```bash
+$ ngtagc hello-world.ngtag -m myApp
+```
+
+
+This code would generate the following directive:
+
+```javascript
+/*
+	<hello-world></hello-world>
+
+	Controller HelloWorldController as helloWorld
+
+*/
+ 
+;(function(angular) {
+	'use strict';
+
+
+	angular
+		.module('ntagExamples')
+		.directive('helloWorld', helloWorld);
+
+	helloWorld.$inject = [];
+	function helloWorld  () {
+		var directive = {
+			restrict: 'E',
+			scope: true,
+			template: '\n        Hello World!\n    ',
+		};
+
+
+
+		return directive;
+	}
+
+
+ 
+})(angular);
+```
+
+
+
+### Example 2
 
 
 ```html
-<!-- 'hello-world.ngtag' -->
-<angular-element name="hello-world" bindings="name">
+<angular-element name="hello-world2" bindings="name">
     <style>
         hello-world {
             font-size: 200%;
@@ -28,7 +85,7 @@ angular directives, so all directive logic is kept toghether. Ex:
 It can be compiled with the command:
 
 ```bash
-$ ngtagc hello-world.ngtag -m myApp
+$ ngtagc hello-world2.ngtag -m myApp
 ```
 
 
@@ -36,48 +93,50 @@ This code would generate the following directive:
 
 ```javascript
 /*
-	<hello-world
-			data-name="=..."
-			></hello-world>
+	<hello-world2data-name="=..."></hello-world2>
 
-	Controller HelloWorldController as helloWorld
+	Controller HelloWorld2Controller as helloWorld2
 
 */
+ 
 ;(function(angular) {
 	'use strict';
 
-	angular
-		.module('ngtagExamples')
-		.directive('helloWorld', helloWorld);
 
-	helloWorld.$inject = ['$document'];
-	function helloWorld  ( $document ) {
+	angular
+		.module('ntagExamples')
+		.directive('helloWorld2', helloWorld2);
+
+	helloWorld2.$inject = ['$document'];
+	function helloWorld2  ( $document ) {
 		var directive = {
 			bindToController: true,
-			controller: HelloWorldController,
+			controller: HelloWorld2Controller,
 			controllerAs: 'vm',
-			require: 'top',
 			restrict: 'E',
 			scope: {
 				name: '=',
 			},
-			template: '\n        <p ng-click="helloWorld.wave()">Hello {{helloWorld.name}}!</p>\n    ',
+			template: '\n        <p ng-click=\"helloWorld.wave()\">Hello {{helloWorld.name}}!</p>\n    ',
 		};
 
 		// register style for this component
-		$document.find('head').append('<style>\n        [hello-world] {\n            font-size: 200%;\n        }\n    </style>');
+		$document.find('head').append('<style>\n        hello-world {\n            font-size: 200%;\n        }\n    </style>');
+
 
 		return directive;
 	}
 
-	HelloWorldController.$inject = ['$element'];
-	function HelloWorldController  ( $element ) {
-		var top = $element.controller('top');
+	HelloWorld2Controller.$inject = [];
+	function HelloWorld2Controller  () {
+		
         this.wave = function() {
             console.log('wave '+this.name);
         }
+    
 	}
 
+ 
 })(angular);
 ```
 
@@ -115,7 +174,7 @@ result:
             scope: {
                 name: '=',
             },
-            template: '\n        <p ng-click=\"helloWorld.wave()\">Hello {{helloWorld.name}}!</p>\n    ',
+            template: 'n        <p ng-click="helloWorld.wave()">Hello {{helloWorld.name}}!</p>n    ',
         };
 
         return directive;
