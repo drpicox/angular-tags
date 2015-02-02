@@ -15,7 +15,9 @@ Example index
 - [template-attributes.md](template-attributes.md)
 - [template-classes.md](template-classes.md)
 - [template-content.md](template-content.md)
-- [template-transclude.md](template-transclude.md)
+- [transclude-directive.md](transclude-directive.md)
+- [transclude-simple.md](transclude-simple.md)
+- [transclude-target.md](transclude-target.md)
 
 
 Note: examples can be generated with examples/compile.sh
