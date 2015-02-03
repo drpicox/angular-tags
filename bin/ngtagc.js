@@ -40,9 +40,9 @@ translator.translate()
 .then(function(result) {
 	//console.log(JSON.stringify(result, null, 2));
 	if (argv['generate-style']) {
-		console.log(result.style);
+		console.log(translator.style);
 	} else {
-		console.log(result.outputBody);
+		console.log(result);
 	}
 })
 
