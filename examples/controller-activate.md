@@ -56,6 +56,7 @@ Result:
 
 		return directive;
 	}
+
 	
 	ControllerActivateElementController.$inject = ['$scope'];
 	function ControllerActivateElementController  ( $scope ) {
@@ -66,6 +67,8 @@ Result:
         };
     
 	}
+	
+
 })(angular);
 ```
 
@@ -120,6 +123,7 @@ Result:
 
 		return directive;
 	}
+
 	
 	ControllerActivateAttributeController.$inject = ['$scope'];
 	function ControllerActivateAttributeController  ( $scope ) {
@@ -130,5 +134,7 @@ Result:
         };
     
 	}
+	
+
 })(angular);
 ```

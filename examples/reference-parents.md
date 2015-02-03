@@ -46,7 +46,8 @@ Result:
 
 	angular
 		.module('ntagExamples')
-		.directive('slideImage', slideImage);
+		.directive('slideImage', slideImage)
+		.run(slideImageStyle);
 	
 	slideImage.$inject = ['$document'];
 	function slideImage  ( $document ) {
@@ -62,11 +63,9 @@ Result:
 			template: '\n        <img ng-src=\"{{vm.src}}\">\n    ',
 		};
 
-		// register style for this component
-		$document.find('head').append('<style>\n        slide-image.enter { }\n        slide-image.leave { display: none; }\n    </style>');
-
 		return directive;
 	}
+
 	
 	SlideImageController.$inject = ['$element'];
 	function SlideImageController  ( $element ) {
@@ -86,5 +85,14 @@ Result:
         slideContainer.addSlide(this);
     
 	}
+	
+
+	slideImageStyle.$inject = ['$document'];
+	function slideImageStyle  ( $document ) {
+
+		// register style for this component
+		$document.find('head').append('<style>\n        slide-image.enter { }\n        slide-image.leave { display: none; }\n    </style>');
+	}
+
 })(angular);
 ```

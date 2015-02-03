@@ -92,7 +92,8 @@ Result:
 
 	angular
 		.module('ntagExamples')
-		.directive('panel', panel);
+		.directive('panel', panel)
+		.run(panelStyle);
 	
 	panel.$inject = ['$document'];
 	function panel  ( $document ) {
@@ -108,15 +109,13 @@ Result:
 			template: '\n        <h1 class=\"title\">{{vm.title}}</h1>\n        <ng-transclude></ng-transclude>\n    ',
 			transclude: true,
 		};
-
-		// register style for this component
-		$document.find('head').append('<style>\n        panel { border: solid black; }\n        panel .title { background: black; color: white; }\n    </style>');
 		function link(scope, element) {
-			if (angular.isUndefined(element.attr('layout')) { element.attr('layout','column'); }
+			if (angular.isUndefined(element.attr('layout'))) { element.attr('layout','column'); }
 		}
 
 		return directive;
 	}
+
 	
 	PanelController.$inject = ['$element','$scope'];
 	function PanelController  ( $element , $scope ) {
@@ -127,5 +126,14 @@ Result:
         }
     
 	}
+	
+
+	panelStyle.$inject = ['$document'];
+	function panelStyle  ( $document ) {
+
+		// register style for this component
+		$document.find('head').append('<style>\n        panel { border: solid black; }\n        panel .title { background: black; color: white; }\n    </style>');
+	}
+
 })(angular);
 ```

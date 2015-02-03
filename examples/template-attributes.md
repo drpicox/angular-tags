@@ -68,11 +68,15 @@ Result:
 			template: '\n        <h1>My Template</h1>\n    ',
 		};
 		function link(scope, element) {
-			if (angular.isUndefined(element.attr('flex')) { element.attr('flex',''); }
-			if (angular.isUndefined(element.attr('layout')) { element.attr('layout','row'); }
+			if (angular.isUndefined(element.attr('flex'))) { element.attr('flex',''); }
+			if (angular.isUndefined(element.attr('layout'))) { element.attr('layout','row'); }
 		}
 
 		return directive;
 	}
+
+	
+	
+
 })(angular);
 ```

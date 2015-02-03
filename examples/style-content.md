@@ -33,7 +33,8 @@ Result:
 
 	angular
 		.module('ntagExamples')
-		.directive('blueBox', blueBox);
+		.directive('blueBox', blueBox)
+		.run(blueBoxStyle);
 	
 	blueBox.$inject = ['$document'];
 	function blueBox  ( $document ) {
@@ -42,10 +43,18 @@ Result:
 			scope: true,
 		};
 
-		// register style for this component
-		$document.find('head').append('<style>\n        blue-box {\n            display: block;\n            color: white;\n            background: blue;\n            padding: 10px;\n        }\n    </style>');
-
 		return directive;
 	}
+
+	
+	
+
+	blueBoxStyle.$inject = ['$document'];
+	function blueBoxStyle  ( $document ) {
+
+		// register style for this component
+		$document.find('head').append('<style>\n        blue-box {\n            display: block;\n            color: white;\n            background: blue;\n            padding: 10px;\n        }\n    </style>');
+	}
+
 })(angular);
 ```

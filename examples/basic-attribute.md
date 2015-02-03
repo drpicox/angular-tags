@@ -9,7 +9,7 @@ Attributes are like follow the composition pattern, you can extend your already 
     <script>
         console.log('basic attribute active');
     </script>
-</angular-element>
+</angular-attribute>
 ```
 
 Result:
@@ -40,11 +40,14 @@ Result:
 
 		return directive;
 	}
+
 	
 	function BasicAttributeController  () {
 		
         console.log('basic attribute active');
     
 	}
+	
+
 })(angular);
 ```

@@ -43,6 +43,10 @@ Result:
 
 		return directive;
 	}
+
+	
+	
+
 })(angular);
 ```
 
@@ -102,6 +106,7 @@ Result:
 
 		return directive;
 	}
+
 	
 	ReferenceChildrenCtrlController.$inject = ['$scope'];
 	function ReferenceChildrenCtrlController  ( $scope ) {
@@ -120,6 +125,8 @@ Result:
         };
     
 	}
+	
+
 })(angular);
 ```
 

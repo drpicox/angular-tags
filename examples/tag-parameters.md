@@ -60,9 +60,12 @@ Result:
 
 		return directive;
 	}
+
 	
 	function ParamterAttributeController  () {
 	}
+	
+
 })(angular);
 ```
 
@@ -123,9 +126,12 @@ Result:
 
 		return directive;
 	}
+
 	
 	function ParamterBindingController  () {
 	}
+	
+
 })(angular);
 ```
 
@@ -178,9 +184,12 @@ Result:
 
 		return directive;
 	}
+
 	
 	function BindingsExamplesController  () {
 	}
+	
+
 })(angular);
 ```
 
@@ -246,11 +255,14 @@ Result:
 
 		return directive;
 	}
+
 	
 	function ParamterCallbackController  () {
 		
     	this.count = 0;
     
 	}
+	
+
 })(angular);
 ```

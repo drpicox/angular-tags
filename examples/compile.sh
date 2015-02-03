@@ -39,6 +39,12 @@ function compileMd {
 	rm -f .tmp.ntag >& /dev/null
 }
 
+if [ -n "$1" ]; then 
+	echo "$(compileMd < $1)" # > $1
+	exit 0	
+fi
+
+
 echo "Example index"  > index.md
 echo "=============" >> index.md
 echo ""              >> index.md

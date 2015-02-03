@@ -113,7 +113,8 @@ Result:
 
 	angular
 		.module('ntagExamples')
-		.directive('site', site);
+		.directive('site', site)
+		.run(siteStyle);
 	
 	site.$inject = ['$document'];
 	function site  ( $document ) {
@@ -127,11 +128,9 @@ Result:
 			transclude: true,
 		};
 
-		// register style for this component
-		$document.find('head').append('<style>\n        site {\n            margin: 16px;\n            border: solid black 1px;\n            display: block;\n        }\n        site > header {\n            padding: 16px;\n            background: yellow;\n            border-bottom: solid black 1px;\n            font-weight: bold;\n        }\n        site > main {\n            padding: 16px;\n        }\n    </style>');
-
 		return directive;
 	}
+
 	
 	SiteController.$inject = ['$transclude'];
 	function SiteController  ( $transclude ) {
@@ -139,6 +138,15 @@ Result:
 			this.$transcluded = clone;
 		}.bind(this));
 	}
+	
+
+	siteStyle.$inject = ['$document'];
+	function siteStyle  ( $document ) {
+
+		// register style for this component
+		$document.find('head').append('<style>\n        site {\n            margin: 16px;\n            border: solid black 1px;\n            display: block;\n        }\n        site > header {\n            padding: 16px;\n            background: yellow;\n            border-bottom: solid black 1px;\n            font-weight: bold;\n        }\n        site > main {\n            padding: 16px;\n        }\n    </style>');
+	}
+
 })(angular);
 ```
 

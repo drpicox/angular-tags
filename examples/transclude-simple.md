@@ -65,7 +65,8 @@ Result:
 
 	angular
 		.module('ntagExamples')
-		.directive('grayedBackground', grayedBackground);
+		.directive('grayedBackground', grayedBackground)
+		.run(grayedBackgroundStyle);
 	
 	grayedBackground.$inject = ['$document'];
 	function grayedBackground  ( $document ) {
@@ -74,11 +75,19 @@ Result:
 			scope: true,
 		};
 
-		// register style for this component
-		$document.find('head').append('<style>\n        transclude-automatic { background: gray; }\n    </style>');
-
 		return directive;
 	}
+
+	
+	
+
+	grayedBackgroundStyle.$inject = ['$document'];
+	function grayedBackgroundStyle  ( $document ) {
+
+		// register style for this component
+		$document.find('head').append('<style>\n        transclude-automatic { background: gray; }\n    </style>');
+	}
+
 })(angular);
 ```
 

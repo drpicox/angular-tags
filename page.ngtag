@@ -1,0 +1,16 @@
+<angular-page name="/my/:some/edit" module="otherApp">
+	<style>
+		.my-some-edit { background: red; }
+		bla { display: flex; transform: translate2d(2px); }
+		a { -webkit-border-radius: 2px; border-radius: 2px }
+	</style>
+	<template layout="row" class="green">
+		<h1 id="hi">Hola</h1>
+	</template>
+	<script resolve="algu" params="some" inject="rom">
+		return 'algu' +rom+ some;
+	</script>
+	<script inject="bla">
+		console.log('hola');
+	</script>
+</angular-page>

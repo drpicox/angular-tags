@@ -45,6 +45,7 @@ Result:
 
 		return directive;
 	}
+
 	
 	UserNameController.$inject = ['userService'];
 	function UserNameController  ( userService ) {
@@ -52,5 +53,7 @@ Result:
         this.name = userService.getName();
     
 	}
+	
+
 })(angular);
 ```

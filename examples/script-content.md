@@ -41,11 +41,14 @@ Result:
 
 		return directive;
 	}
+
 	
 	function ConsoleHelloController  () {
 		
         console.log('hello world');
     
 	}
+	
+
 })(angular);
 ```
