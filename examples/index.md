@@ -6,6 +6,8 @@ Example index
 - [basic-template.md](basic-template.md)
 - [controller-activate.md](controller-activate.md)
 - [controller-inject.md](controller-inject.md)
+- [example-count-clicks.md](example-count-clicks.md)
+- [example-say-hello.md](example-say-hello.md)
 - [module-name.md](module-name.md)
 - [page-controller.md](page-controller.md)
 - [page-property.md](page-property.md)
