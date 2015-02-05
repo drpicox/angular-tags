@@ -8,6 +8,7 @@ Example index
 - [controller-inject.md](controller-inject.md)
 - [module-name.md](module-name.md)
 - [page-controller.md](page-controller.md)
+- [page-property.md](page-property.md)
 - [page-resolve.md](page-resolve.md)
 - [page-style.md](page-style.md)
 - [page-template.md](page-template.md)

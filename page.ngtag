@@ -1,4 +1,5 @@
 <angular-page name="/my/:some/edit" module="otherApp">
+	<prop name="title">"yesterday"</prop>
 	<style>
 		.my-some-edit { background: red; }
 		bla { display: flex; transform: translate2d(2px); }
