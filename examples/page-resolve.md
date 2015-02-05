@@ -54,11 +54,11 @@ Generated code:
 			controller: PostsPostIdController,
 			controllerAs: 'vm',
 			resolve: {
-				post: postResolve,
-				relateds: relatedsResolve,
-				moreable: moreableResolve,
+				post: postPostsPostIdResolve,
+				relateds: relatedsPostsPostIdResolve,
+				moreable: moreablePostsPostIdResolve,
 			},
-			template: '\n        <h1>{{vm.post.title}}</h1>\n        <div ng-bind-html=\"vm.post.content\"></div>\n        <hr>\n        <p>{{vm.more}}</p>\n        <hr>\n        <ul><li ng-repeat=\"related in vm.relateds\">{{related}}</li></ul>\n    ',
+			template: '\n        <h1>{{vm.post.title}}</h1>\n        <div ng-bind-html="vm.post.content"></div>\n        <hr>\n        <p>{{vm.more}}</p>\n        <hr>\n        <ul><li ng-repeat="related in vm.relateds">{{related}}</li></ul>\n    ',
 		});
 
 	}
@@ -75,8 +75,8 @@ Generated code:
 	
 
 	
-	postResolve.$inject = ['postsService','$route'];
-	function postResolve  ( postsService , $route ) {
+	postPostsPostIdResolve.$inject = ['postsService','$route'];
+	function postPostsPostIdResolve  ( postsService , $route ) {
 		var postId = $route.current.params.postId;
 				
 		return postsService.load(postId);
@@ -84,8 +84,8 @@ Generated code:
 	}
 
 	
-	relatedsResolve.$inject = ['relatedsService','$route'];
-	function relatedsResolve  ( relatedsService , $route ) {
+	relatedsPostsPostIdResolve.$inject = ['relatedsService','$route'];
+	function relatedsPostsPostIdResolve  ( relatedsService , $route ) {
 		var postId = $route.current.params.postId;
 				
 		return relatedsService.find(postId);
@@ -93,8 +93,8 @@ Generated code:
 	}
 
 	
-	moreableResolve.$inject = ['moreablesService','$route'];
-	function moreableResolve  ( moreablesService , $route ) {
+	moreablePostsPostIdResolve.$inject = ['moreablesService','$route'];
+	function moreablePostsPostIdResolve  ( moreablesService , $route ) {
 		var postId = $route.current.params.postId;
 				
 		return moreablesService.check(postId);

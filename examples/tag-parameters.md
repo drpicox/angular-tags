@@ -121,7 +121,7 @@ Result:
 			scope: {
 				model: '=',
 			},
-			template: '\n        Model value is: &quot;{{vm.value}}&quot;.<br>\n        Change it: <input type=\"number\" ng-model=\"vm.model\">\n    ',
+			template: '\n        Model value is: &quot;{{vm.value}}&quot;.<br>\n        Change it: <input type="number" ng-model="vm.model">\n    ',
 		};
 
 		return directive;
@@ -250,7 +250,7 @@ Result:
 			scope: {
 				onaccumulate: '&',
 			},
-			template: '\n    \tHow to accumulate? <input type=\"number\" ng-model=\"vm.count\"><br>\n        <button ng-click=\"vm.onaccumulate({count: vm.count})\">Accumulate!</button>\n    ',
+			template: '\n    \tHow to accumulate? <input type="number" ng-model="vm.count"><br>\n        <button ng-click="vm.onaccumulate({count: vm.count})">Accumulate!</button>\n    ',
 		};
 
 		return directive;

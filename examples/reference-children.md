@@ -38,7 +38,7 @@ Result:
 		var directive = {
 			restrict: 'E',
 			scope: true,
-			template: '\n        <toggle id=\"theToggle\"></toggle>\n        <button ng-click=\"$.theToggle.toggle()\">Toggle</button>\n        <h1 ng-show=\"$.theToggle.isOpen()\">My Content</h1>\n    ',
+			template: '\n        <toggle id="theToggle"></toggle>\n        <button ng-click="$.theToggle.toggle()">Toggle</button>\n        <h1 ng-show="$.theToggle.isOpen()">My Content</h1>\n    ',
 		};
 
 		return directive;
@@ -101,7 +101,7 @@ Result:
 			controllerAs: 'vm',
 			restrict: 'E',
 			scope: true,
-			template: '\n        <toggle id=\"theToggle\"></toggle>\n        <button ng-click=\"toggleDouble()\">Click twice to Toggle</button>\n        <h1 ng-show=\"isOpen()\">My Content</h1>\n    ',
+			template: '\n        <toggle id="theToggle"></toggle>\n        <button ng-click="toggleDouble()">Click twice to Toggle</button>\n        <h1 ng-show="isOpen()">My Content</h1>\n    ',
 		};
 
 		return directive;

@@ -1,4 +1,6 @@
 <angular-element name="tag-verd" module="otherApp" attributes="color" bindings="rora cora*?" callbacks="onplop">
+	<prop name="some">{"extra": "Value" }</prop>
+	<prop name="other" value='"info"'></prop>
 	<style>
 		tag-verd { background: red; }
 		bla { display: flex; transform: translate2d(2px); }

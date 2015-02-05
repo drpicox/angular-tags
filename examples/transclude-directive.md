@@ -106,7 +106,7 @@ Result:
 			scope: {
 				title: '@',
 			},
-			template: '\n        <h1 class=\"title\">{{vm.title}}</h1>\n        <ng-transclude></ng-transclude>\n    ',
+			template: '\n        <h1 class="title">{{vm.title}}</h1>\n        <ng-transclude></ng-transclude>\n    ',
 			transclude: true,
 		};
 		function link(scope, element) {

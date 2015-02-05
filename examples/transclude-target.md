@@ -124,7 +124,7 @@ Result:
 			controllerAs: 'vm',
 			restrict: 'E',
 			scope: true,
-			template: '\n        <header transclude-id=\"site-header\"></header>\n        <main transclude-id=\"site-main\"></main>\n    ',
+			template: '\n        <header transclude-id="site-header"></header>\n        <main transclude-id="site-main"></main>\n    ',
 			transclude: true,
 		};
 

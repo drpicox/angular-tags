@@ -60,7 +60,7 @@ Result:
 			scope: {
 				src: '@',
 			},
-			template: '\n        <img ng-src=\"{{vm.src}}\">\n    ',
+			template: '\n        <img ng-src="{{vm.src}}">\n    ',
 		};
 
 		return directive;

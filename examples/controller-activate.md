@@ -48,7 +48,7 @@ Result:
 			link: link,
 			restrict: 'E',
 			scope: true,
-			template: '\n        Result: {{vm.result}}<br>\n        <child-with-state id=\"child\"></child-with-state>\n    ',
+			template: '\n        Result: {{vm.result}}<br>\n        <child-with-state id="child"></child-with-state>\n    ',
 		};
 		function link(scope, element) {
 			if (scope.vm.activate) { scope.vm.activate(); }
@@ -115,7 +115,7 @@ Result:
 			link: link,
 			restrict: 'A',
 			scope: true,
-			template: '\n        Result: {{controllerActivateAttribute.result}}<br>\n        <child-with-state id=\"child\"></child-with-state>\n    ',
+			template: '\n        Result: {{controllerActivateAttribute.result}}<br>\n        <child-with-state id="child"></child-with-state>\n    ',
 		};
 		function link(scope, element) {
 			if (scope.controllerActivateAttribute.activate) { scope.controllerActivateAttribute.activate(); }

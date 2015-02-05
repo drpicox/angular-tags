@@ -36,7 +36,7 @@ Generated code:
 	function AboutRoute  ( $routeProvider ) {
 
 		$routeProvider.when('/about', {
-			template: '\n        <h1 class=\"about\">About</h1>\n        This is an example about page-template.\n    ',
+			template: '\n        <h1 class="about">About</h1>\n        This is an example about page-template.\n    ',
 		});
 
 	}
