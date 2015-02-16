@@ -16,11 +16,21 @@
 	function idDirective() {
 		var directive = {
 			restrict: 'A',
+			/* FIXME: temporary solution until AngularJS 1.4 , now it requires debugInfo to work */
+			link: function (scope,element,attrs) {
+				var elementScope = element.isolateScope();
+				if (elementScope) {
+					scope.$ = scope.$ || {};
+					scope.$[attrs.id] = elementScope.vm;
+				}
+			},
+			/*
 			scope: true,
 			link: function (scope,element,attrs) {
 				scope.$parent.$ = scope.$parent.$ || {};
 				scope.$parent.$[attrs.id] = scope.vm;
 			},
+			*/
 		};
 
 		return directive;
