@@ -4,6 +4,9 @@ NG-Tags
 Transformation utility to convert _polymer-like_ elements into 
 angular directives, so all directive logic is kept toghether. 
 
+See all examples: [examples](examples/index.md).
+
+
 ### Example 1
 
 ```html
@@ -64,7 +67,7 @@ This code would generate the following directive:
         }
     </style>
     <template>
-        <p ng-click="helloWorld.wave()">Hello {{helloWorld.name}}!</p>
+        <p ng-click="vm.wave()">Hello {{vm.name}}!</p>
     </template>
     <script>
         this.wave = function() {
@@ -110,7 +113,7 @@ This code would generate the following directive:
 			scope: {
 				name: '=',
 			},
-			template: '\n        <p ng-click=\"helloWorld.wave()\">Hello {{helloWorld.name}}!</p>\n    ',
+			template: '\n        <p ng-click=\"vm.wave()\">Hello {{vm.name}}!</p>\n    ',
 		};
 
 		// register style for this component
@@ -270,3 +273,9 @@ This in fact is something that I should think about. All scopes variables are co
 ### Why CSS is embedded in the JS?
 
 Why not? It is the most simple solution. The compiled file is just one html file, the output file is just one another file, so there is a match one by one. But it can be customized to produce two files, one JS and other CSS. By the way, the CSS produced is autoprefixed.
+
+
+### What about coupling and cohesion?
+
+There are four parts in each ngtag definition: a directive, a controller, a template, and a css definition. They are usually highly coupled: any change in any of them propably will affect the other 3, so there is not a significant increase of coupling. In the other hand, the cohesion (things that do the same toghether) increases, because you put in a single place all the roles of the responsability of drawing a view. 
+
