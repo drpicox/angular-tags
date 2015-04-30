@@ -5,6 +5,8 @@ Transformation utility to convert _polymer-like_ elements into
 angular directives, so all directive logic is kept toghether. 
 
 See all examples: [examples](examples/index.md).
+See grunt plugin: [grunt plugin](https://github.com/ngtags/grunt-ngtags).
+See grunt plugin example: [grunt plugin example](https://github.com/ngtags/grunt-ngtags-example).
 
 
 ### Example 1
