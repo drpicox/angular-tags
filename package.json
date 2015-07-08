@@ -1,6 +1,6 @@
 {
   "name": "ngtags",
-  "version": "0.0.19",
+  "version": "0.0.20",
   "description": " A transform library to generate angular directives from components like html tags",
   "main": "./index.js",
   "bin": {
