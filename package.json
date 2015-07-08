@@ -25,11 +25,12 @@
   },
   "homepage": "https://github.com/ngtags/ngtags",
   "dependencies": {
-    "autoprefixer-core": "^5.0.0",
+    "autoprefixer-core": "^5.2.1",
     "cheerio": "^0.18.0",
     "es6-promise": "^2.0.1",
     "lodash": "^2.4.1",
     "minimist": "^1.1.0",
+    "postcss": "^4.1.16",
     "underscore.string": "^3.0.1"
   }
 }
